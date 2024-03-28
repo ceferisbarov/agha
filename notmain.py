@@ -8,14 +8,14 @@ def main():
 
 	if game_type == "n":
 
+		agent = Api("./api_key/key.json")
 		user = Api("./api_key/mellon.json") #sorry
-		opponent = Api("./api_key/key.json")
 
 		board_size = int(input("board size? (default is 3)\nsize: ") or "3")
 		
 		target_size = int(input("how many to win? (must be less than or equal to board size -default is 3)\ntarget: ") or "3")
 
-		game = Game(opponent, user, size=board_size, target=target_size)
+		game = Game(user, agent, size=board_size, target=target_size)
 
 		print(f"Game created! $GME (1265) vs. MellonCap (1267) --> gameId: {game.gameId}")
 
